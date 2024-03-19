@@ -8,9 +8,12 @@
 		"build": "tsc && vite build",
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
-		"prepare": "husky && husky install"
+		"prepare": "husky && husky install",
+		"commit": "cz"
 	},
 	"dependencies": {
+		"commitizen": "^4.3.0",
+		"cz-customizable": "^7.0.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	},
@@ -20,6 +23,7 @@
 		"@typescript-eslint/eslint-plugin": "^7.3.1",
 		"@typescript-eslint/parser": "^7.3.1",
 		"@vitejs/plugin-react": "^4.2.1",
+		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^8.57.0",
 		"eslint-config-airbnb": "^19.0.4",
 		"eslint-config-prettier": "^9.1.0",
@@ -37,5 +41,13 @@
 	"lint-staged": {
 		"*.{ts,tsx}": "eslint --fix",
 		"*.{js,css,md}": "prettier --write"
+	},
+	"config": {
+		"commitizen": {
+			"path": "node_modules/cz-customizable"
+		},
+		"cz-customizable": {
+			"config": "commitizen.cjs"
+		}
 	}
 }

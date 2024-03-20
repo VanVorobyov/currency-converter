@@ -15,7 +15,8 @@
 		"commitizen": "^4.3.0",
 		"cz-customizable": "^7.0.0",
 		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react-dom": "^18.2.0",
+		"sass": "^1.72.0"
 	},
 	"devDependencies": {
 		"@types/react": "^18.2.64",
@@ -40,7 +41,7 @@
 	},
 	"lint-staged": {
 		"*.{ts,tsx}": "eslint --fix",
-		"*.{js,css,md}": "prettier --write"
+		"*.{js,scss,css,md}": "prettier --write"
 	},
 	"config": {
 		"commitizen": {

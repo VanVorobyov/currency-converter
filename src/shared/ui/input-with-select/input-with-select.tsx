@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { FC } from 'react';
 import styles from './styles.module.scss';
 
 export interface IInputWithSelectProps {
@@ -8,31 +8,20 @@ export interface IInputWithSelectProps {
 	inputValue: number;
 	selectValue: string;
 	selectOptions: string[];
-	onInputChange: (value: number) => void;
-	onSelectChange: (value: string) => void;
+	onInputChange?: (value: number) => void;
+	onSelectChange?: (value: string) => void;
 }
 
 export const InputWithSelect: FC<IInputWithSelectProps> = ({
 	id,
 	name,
 	isDisabled,
-	inputValue: initialInputValue,
-	selectValue: initialSelectValue,
+	inputValue,
+	selectValue,
 	selectOptions,
+	onInputChange,
+	onSelectChange,
 }) => {
-	const [inputValue, setInputValue] = useState(initialInputValue);
-	const [selectValue, setSelectValue] = useState(initialSelectValue);
-
-	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const value = Number(e.target.value);
-		setInputValue(value);
-	};
-
-	const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-		const value = e.target.value;
-		setSelectValue(value);
-	};
-
 	return (
 		<div className={styles.container}>
 			<div className={styles.inputContainer}>
@@ -42,7 +31,9 @@ export const InputWithSelect: FC<IInputWithSelectProps> = ({
 					placeholder=""
 					disabled={isDisabled}
 					value={inputValue}
-					onChange={handleInputChange}
+					onChange={(e) =>
+						onInputChange && onInputChange(Number(e.target.value))
+					}
 				/>
 			</div>
 			<div className={styles.selectContainer}>
@@ -50,7 +41,7 @@ export const InputWithSelect: FC<IInputWithSelectProps> = ({
 					className=""
 					disabled={isDisabled}
 					value={selectValue}
-					onChange={handleSelectChange}
+					onChange={(e) => onSelectChange && onSelectChange(e.target.value)}
 				>
 					{selectOptions?.map((selectOption) => (
 						<option key={selectOption} value={selectOption}>

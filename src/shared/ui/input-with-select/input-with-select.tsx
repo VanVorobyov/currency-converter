@@ -28,6 +28,7 @@ export const InputWithSelect: FC<IInputWithSelectProps> = ({
 				<input
 					id={id}
 					name={name}
+					type="number"
 					placeholder=""
 					disabled={isDisabled}
 					value={inputValue}

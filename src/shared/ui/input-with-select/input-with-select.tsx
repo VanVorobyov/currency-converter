@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import styles from './styles.module.scss';
 import { IInputWithSelect } from '../../models/input-with-select/input-with-select.ts';
+import { NumericFormat } from 'react-number-format';
 
 export const InputWithSelect: FC<IInputWithSelect> = ({
 	id,
@@ -15,16 +16,20 @@ export const InputWithSelect: FC<IInputWithSelect> = ({
 	return (
 		<div className={styles.container}>
 			<div className={styles.inputContainer}>
-				<input
+				<NumericFormat
 					id={id}
 					name={name}
-					type="number"
 					placeholder=""
 					disabled={isDisabled}
 					value={inputValue}
-					onChange={(e) =>
-						onInputChange && onInputChange(Number(e.target.value))
-					}
+					onChange={(e) => onInputChange && onInputChange(e.target.value)}
+					allowNegative={false}
+					decimalScale={9}
+					allowLeadingZeros={true}
+					thousandSeparator=" "
+					decimalSeparator="."
+					prefix=""
+					suffix=""
 				/>
 			</div>
 			<div className={styles.selectContainer}>

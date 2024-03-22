@@ -2,9 +2,9 @@ export interface IInputWithSelect {
 	id: string;
 	name: string;
 	isDisabled: boolean;
-	inputValue: number;
+	inputValue: string | number;
 	selectValue: string;
 	selectOptions: string[];
-	onInputChange?: (value: number) => void;
+	onInputChange?: (value: string) => void;
 	onSelectChange?: (value: string) => void;
 }

@@ -1,18 +1,8 @@
 import { FC } from 'react';
 import styles from './styles.module.scss';
+import { IInputWithSelect } from '../../models/input-with-select/input-with-select.ts';
 
-export interface IInputWithSelectProps {
-	id: string;
-	name: string;
-	isDisabled: boolean;
-	inputValue: number;
-	selectValue: string;
-	selectOptions: string[];
-	onInputChange?: (value: number) => void;
-	onSelectChange?: (value: string) => void;
-}
-
-export const InputWithSelect: FC<IInputWithSelectProps> = ({
+export const InputWithSelect: FC<IInputWithSelect> = ({
 	id,
 	name,
 	isDisabled,

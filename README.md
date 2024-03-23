@@ -1,30 +1,64 @@
-# React + TypeScript + Vite
+# Виджет  конвертера  криптовалют
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Этот  проект  реализует  виджет  на  основе  React  и  TypeScript  для  конвертации  между  тремя  популярными  криптовалютами:  USDT,  BTC  и  ETH.  Он  использует  API  Binance  для  получения  обменных  курсов  в  режиме  реального  времени  и  предоставляет  удобный  интерфейс  для  простой  конвертации.
 
-Currently, two official plugins are available:
+## Возможности
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   **Поддержка  трех  криптовалют:**  USDT,  BTC  и  ETH.
+    
+-   **Обменные  курсы  в  режиме  реального  времени:**  Получает  последние  курсы  с  API  Binance.
+    
+-   **Автоматическая  конвертация:**  Обновляет  выходное  значение  автоматически  при  изменении  входного  значения.
+    
+-   **Удобный  интерфейс:**  Обеспечивает  четкий  и  интуитивно  понятный  дизайн  для  легкой  конвертации.
+    
+-   **Построен  с  использованием  React  и  TypeScript:**  Обеспечивает  надежную  и  поддерживаемую  кодовую  базу.
+    
 
-## Expanding the ESLint configuration
+## Начало  работы
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1.  **Клонируйте  репозиторий:**
+    
+    ```
+    git clone https://github.com/VanVorobyov/currency-converter.git
+    ```
+    
+    
+2.  **Установите  зависимости:**
+    
+    ```
+    npm install
+    ```
+    
+    
+3.  **Запустите  сервер  разработки:**
+    
+    ```
+    npm run dev
+    ```
+    
+    
+    Это  откроет  виджет  в  вашем  браузере.
+    
 
-- Configure the top-level `parserOptions` property like this:
+## Использование
 
-```js
-export default {
-	// other rules...
-	parserOptions: {
-		ecmaVersion: 'latest',
-		sourceType: 'module',
-		project: ['./tsconfig.json', './tsconfig.node.json'],
-		tsconfigRootDir: __dirname,
-	},
-};
-```
+1.  Выберите  желаемые  входную  и  выходную  валюты  из  выпадающих  списков.
+    
+2.  Введите  сумму,  которую  вы  хотите  конвертировать,  в  поле  ввода.
+    
+3.  Выходное  поле  автоматически  отобразит  конвертированное  значение  на  основе  текущего  обменного  курса.
+    
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+    
+
+## Используемые  технологии
+
+-   **React:**  Библиотека  JavaScript  для  создания  пользовательских  интерфейсов.
+    
+-   **TypeScript:**  Надмножество  JavaScript,  которое  добавляет  статическую  типизацию,  повышая  надежность  и  ремонтопригодность  кода.
+    
+-   **API  Binance:**  Предоставляет  доступ  к  обменным  курсам  криптовалют  в  режиме  реального  времени.
+    
+-   **[Архитектура]**  Feature-Sliced Design.
+    

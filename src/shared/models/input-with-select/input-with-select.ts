@@ -4,7 +4,7 @@ export interface IInputWithSelect {
 	isDisabled: boolean;
 	inputValue: string | number;
 	selectValue: string;
-	selectOptions: { value: string; icon: string }[];
+	selectOptions: { value: string }[];
 	onInputChange?: (value: string) => void;
 	onSelectChange?: (value: string) => void;
 }

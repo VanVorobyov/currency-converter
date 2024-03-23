@@ -26,7 +26,7 @@ export const InputWithSelect: FC<IInputWithSelect> = ({
 					onChange={(e) => onInputChange && onInputChange(e.target.value)}
 					allowNegative={false}
 					decimalScale={9}
-					allowLeadingZeros={true}
+					allowLeadingZeros={false}
 					thousandSeparator=" "
 					decimalSeparator="."
 					prefix=""

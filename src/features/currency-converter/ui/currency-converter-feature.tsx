@@ -2,11 +2,7 @@ import { FC, useState, useEffect } from 'react';
 import { CurrencyConverterEntity } from '../../../entities';
 import { useCurrencyInfo } from '../../../shared/hooks/useCurrencyInfo.ts';
 
-export interface ICurrencyConverterFeatureProps {}
-
-export const CurrencyConverterFeature: FC<
-	ICurrencyConverterFeatureProps
-> = () => {
+export const CurrencyConverterFeature: FC = () => {
 	const [currencyFrom, setCurrencyFrom] = useState<string>('BTC');
 	const [currencyTo, setCurrencyTo] = useState<string>('USDT');
 
@@ -77,11 +73,11 @@ export const CurrencyConverterFeature: FC<
 
 	useEffect(() => {
 		if (currencyFrom === currencyTo) setValueTo(valueFrom);
-	}, [currencyFrom, currencyTo, valueFrom]);
+	}, [currencyFrom, currencyTo]);
 
 	useEffect(() => {
 		if (currencyFrom === currencyTo) setValueFrom(valueTo);
-	}, [currencyFrom, currencyTo, valueTo]);
+	}, [currencyFrom, currencyTo]);
 	return (
 		<>
 			<CurrencyConverterEntity
